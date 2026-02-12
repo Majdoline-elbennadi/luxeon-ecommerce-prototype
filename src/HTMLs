@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxeon | About Us</title>
+
+  <link rel="icon" href="../photos/brand.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="../CSS/styleHomepage.css" />
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  
+  <header class="site-header">
+    <div class="logo">
+      <p>
+        <span class="brand-name">LUXEON</span>
+        <br>
+        <span class="brand-slogan">Whispers Of Luxury</span>
+      </p>
+    </div>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a class="active" href="../HTMLS/index.html">About us</a></li>
+        <li><a href="../HTMLS/product.html">Products</a></li>
+        <li><a href="../HTMLS/shop.html">Shop Now</a></li>
+        <li><a href="../HTMLS/contactUs.html">Contact us</a></li>
+        <li>
+          <a href="../HTMLS/cart.html" aria-label="Cart">
+            <i class="ri-shopping-cart-2-line"></i>
+          </a>
+        </li>
+        <li>
+          <a href="../HTMLS/wishlist.html" aria-label="Wishlist">
+            <i class="ri-heart-line"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <p class="hero-kicker">ABOUT US</p>
+          <h1 class="hero-title">Discover the<br><span>Essence of Luxury</span></h1>
+          <p class="hero-sub">
+            Timeless Elegance & Exquisite Fragrances
+          </p>
+
+          <div class="breadcrumb">
+            <span>HOME</span> <span class="dot">/</span> <span>ABOUT US</span>
+          </div>
+        </div>
+
+        
+        <div class="hero-right">
+          <img src="../photos/mainBottle.png" alt="Perfume" />
+        </div>
+      </div>
+    </section>
+
+   
+    <section class="section">
+      <div class="section-card story">
+        <div class="story-text">
+          <h2 class="section-title">Our Story</h2>
+          <p>
+            Born from a passion for artistry, our perfume brand weaves nature’s finest treasures into timeless,
+            handcrafted fragrances. Each bottle is a masterpiece, embodying elegance, emotion, and allure.
+            Unveil your essence and let your scent leave an unforgettable impression.
+          </p>
+
+          <a class="btn" href="../HTMLS/shop.html">SHOP NOW</a>
+        </div>
+
+        
+        
+      </div>
+    </section>
+
+    
+    <section class="section">
+      <h2 class="center-title">Why Choose Us?</h2>
+
+      <div class="cards-3">
+        <div class="info-card">
+          <div class="icon-circle"><i class="ri-drop-line"></i></div>
+          <h3>Exquisite Selection</h3>
+          <p>Handpicked, luxurious scents crafted to feel timeless and unforgettable.</p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon-circle"><i class="ri-shield-check-line"></i></div>
+          <h3>100% Authentic</h3>
+          <p>Carefully sourced fragrances — quality and trust in every bottle.</p>
+        </div>
+
+        <div class="info-card">
+          <div class="icon-circle"><i class="ri-customer-service-2-line"></i></div>
+          <h3>Exceptional Service</h3>
+          <p>Friendly support to help you find the perfect scent for every moment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-card testimonials">
+        <div class="test-left">
+          <h2 class="section-title">What Our Customers Say</h2>
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>“Absolutely in love with Luxeon. Elegant packaging and long-lasting scent.”</p>
+            <span class="who">— Maria S.</span>
+          </div>
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>“So luxurious and refined — it became my signature perfume instantly.”</p>
+            <span class="who">— Laura M.</span>
+          </div>
+
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>“Fast delivery, great support, and the fragrance is just perfect.”</p>
+            <span class="who">— James T.</span>
+          </div>
+        </div>
+
+        <div class="test-right">
+          <img src="../photos/bottle3.png" alt="Perfume set" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="vip-footer">
+    <div class="vip-inner">
+      <div class="vip-left">
+        <h3>Join Our VIP Club</h3>
+        <p>Get exclusive offers and new arrivals first.</p>
+      </div>
+
+      <form class="vip-form" onsubmit="return false;">
+        <input type="email" placeholder="Enter your email" />
+        <button type="submit">SUBSCRIBE</button>
+      </form>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="socials">
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+      </div>
+      <p class="copyright">© 2026 LUXEON</p>
+    </div>
+  </footer>
+</body>
+</html>
