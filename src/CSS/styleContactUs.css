@@ -1,0 +1,233 @@
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#F7F5F2;overflow-x:hidden}
+body{font-family:Arial, Helvetica, sans-serif;color:#1a0c0c;background:#F7F5F2}
+a{color:inherit;text-decoration:none}
+input,textarea,button{font-family:inherit;border:none;outline:none}
+button{cursor:pointer}
+
+/* ===== Header (match your site) ===== */
+.site-header{
+  width:100%;
+  background-color:#d6c2b1;
+  height:105px;
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  padding:0 20px;
+}
+.logo p{line-height:1}
+.brand-name{font-family:serif;font-size:50px;font-weight:700}
+.brand-slogan{
+  font-family:serif;font-style:italic;display:inline-block;
+  margin-left:3.5cm;margin-top:6px;font-weight:700
+}
+.nav-list{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.nav-list a{
+  font-size:20px;
+  text-transform:capitalize;
+  font-weight:700;
+  font-family:serif;
+  text-decoration:underline;
+}
+.nav-list a.active{color:#b88d4b}
+.ri-shopping-cart-2-line{font-size:30px}
+.ri-heart-line{font-size:22px}
+
+/* ===== Page ===== */
+.page{width:min(1200px,92%);margin:30px auto 70px}
+
+/* ===== Hero ===== */
+.hero{
+  background:#e6d7c4;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 18px 50px rgba(0,0,0,.12);
+}
+.hero-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  padding:26px;
+}
+.hero-left{flex:1.2}
+.kicker{letter-spacing:.25em;font-family:serif;font-size:14px;opacity:.75}
+.hero h1{font-family:serif;font-size:52px;line-height:1.05;margin-top:10px}
+.hero h1 span{font-style:italic}
+.hero p{font-family:serif;opacity:.85;margin-top:10px;line-height:1.7}
+.hero-right{
+  flex:.8;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.hero-card{
+  width:min(420px,100%);
+  background:rgba(249,235,216,0.92);
+  border-radius:18px;
+  padding:16px;
+  box-shadow:0 14px 40px rgba(0,0,0,.10);
+}
+.hero-card .line{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  padding:10px 8px;
+  border-radius:14px;
+}
+.hero-card .line:hover{background:rgba(255,255,255,.45)}
+.hero-card i{font-size:22px;margin-top:2px}
+.hero-card .label{font-family:serif;font-weight:800}
+.hero-card .value{font-family:serif;opacity:.8;margin-top:3px}
+.badge{
+  display:inline-block;
+  margin-top:10px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.5);
+  font-family:serif;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+
+/* ===== Layout ===== */
+.grid{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns: 1.35fr .95fr;
+  gap:14px;
+  align-items:start;
+}
+.panel{
+  background:#e6d7c4;
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 18px 50px rgba(0,0,0,.10);
+}
+.panel h2{font-family:serif;font-size:30px;margin-bottom:8px}
+.panel p{font-family:serif;opacity:.85;line-height:1.7}
+
+/* ===== Form ===== */
+.form{
+  margin-top:12px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-family:serif;font-weight:800;letter-spacing:.06em;font-size:13px}
+.field input,.field textarea{
+  background:rgba(255,255,255,.6);
+  border-radius:14px;
+  padding:12px 14px;
+  border:1px solid rgba(0,0,0,.10);
+}
+.field textarea{min-height:140px;resize:vertical;grid-column:1/-1}
+
+.form-actions{
+  grid-column:1/-1;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+  margin-top:4px;
+}
+.btn{
+  padding:12px 16px;
+  border-radius:12px;
+  background:#1a0c0c;
+  color:#f9ebd8;
+  font-family:serif;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+.btn.secondary{
+  background:rgba(249,235,216,0.92);
+  color:#1a0c0c;
+  border:1px solid rgba(0,0,0,.12);
+}
+.small-note{font-family:serif;opacity:.7}
+
+/* ===== Map placeholder ===== */
+.map{
+  margin-top:12px;
+  border-radius:18px;
+  overflow:hidden;
+  height:260px;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.6), transparent 55%),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,.55), transparent 55%),
+    linear-gradient(135deg, rgba(26,12,12,.12), rgba(26,12,12,.02));
+  position:relative;
+}
+.map::after{
+  content:"Map / Location";
+  position:absolute;
+  bottom:14px;
+  left:14px;
+  padding:10px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.55);
+  font-family:serif;
+  font-weight:800;
+  letter-spacing:.08em;
+  opacity:.9;
+}
+
+/* ===== FAQ ===== */
+.faq{margin-top:14px;display:flex;flex-direction:column;gap:10px}
+details{
+  background:rgba(249,235,216,0.92);
+  border-radius:16px;
+  padding:12px 14px;
+  box-shadow:0 10px 28px rgba(0,0,0,.08);
+}
+summary{
+  list-style:none;
+  cursor:pointer;
+  font-family:serif;
+  font-weight:900;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+summary::-webkit-details-marker{display:none}
+details p{margin-top:8px}
+
+/* ===== Footer ===== */
+.footer{
+  margin-top:18px;
+  background:#d6c2b1;
+  border-radius:18px;
+  padding:18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.footer .left h3{font-family:serif;font-size:26px}
+.footer .left p{font-family:serif;opacity:.8}
+.socials{display:flex;gap:10px;align-items:center}
+.socials a{
+  width:42px;height:42px;border-radius:14px;
+  display:grid;place-items:center;
+  background:rgba(255,255,255,.45);
+}
+.socials i{font-size:20px}
+
+/* ===== Responsive ===== */
+@media (max-width: 980px){
+  .hero-inner{flex-direction:column}
+  .grid{grid-template-columns:1fr}
+  .form{grid-template-columns:1fr}
+  .brand-slogan{margin-left:0}
+}
