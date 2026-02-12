@@ -1,0 +1,43 @@
+
+create table if not exists public.contact_messages (
+  id uuid primary key default gen_random_uuid(),
+  created_at timestamptz default now(),
+  session_id text,
+  full_name text not null,
+  email text not null,
+  subject text,
+  order_id text,
+  message text not null
+);
+
+
+create table if not exists public.wishlist_items (
+  id uuid primary key default gen_random_uuid(),
+  created_at timestamptz default now(),
+  session_id text not null,
+  item_id text not null,
+  item_name text not null,
+  unique(session_id, item_id)
+);
+
+
+create table if not exists public.cart_items (
+  id uuid primary key default gen_random_uuid(),
+  created_at timestamptz default now(),
+  session_id text not null,
+  item_id text not null,
+  item_name text not null,
+  size text,
+  unit_price numeric default 0,
+  quantity int default 0,
+  line_total numeric default 0
+);
+
+
+create table if not exists public.cart_summary (
+  session_id text primary key,
+  subtotal numeric default 0,
+  final_total numeric default 0,
+  rule text default 'none',
+  updated_at timestamptz default now()
+);
