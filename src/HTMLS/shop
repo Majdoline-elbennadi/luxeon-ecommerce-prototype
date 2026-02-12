@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUXEON | Shop Now</title>
+
+  <link rel="icon" href="../photos/brand.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="../CSS/styleShop.css" />
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+  <script src="../JAVA SCRIPT/javascript.js" defer></script>
+  <script type="module" src="../JAVA SCRIPT/supabaseLoader.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <p>
+        <span class="brand-name">LUXEON</span>
+        <br />
+        <span class="brand-slogan">Whispers Of Luxury</span>
+      </p>
+    </div>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="../HTMLS/index.html">About us</a></li>
+        <li><a href="../HTMLS/product.html">Products</a></li>
+        <li><a class="active" href="../HTMLS/shop.html">Shop Now</a></li>
+        <li><a href="../HTMLS/contactUs.html">Contact us</a></li>
+        <li><a href="../HTMLS/cart.html" aria-label="Cart"><i class="ri-shopping-cart-2-line"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <h1>Shop Now</h1>
+      <p>Select your perfume, choose the size, then calculate the total.</p>
+    </section>
+
+    <section class="shop-grid">
+     
+      <div class="panel" aria-label="Items">
+        <div class="item" id="card1">
+          <div class="item-title">
+            <input type="checkbox" id="item1" />
+            <div>
+              Elegant Fragrance
+              <small>Bergamot • White Rose • Rich Woods</small>
+            </div>
+          </div>
+
+          <div class="sizes">
+            <label><input type="radio" name="property1" value="10" /> 10ml — $10</label>
+            <label><input type="radio" name="property1" value="25" /> 50ml — $25</label>
+            <label><input type="radio" name="property1" value="50" /> 100ml — $50</label>
+          </div>
+
+          <div class="qty">
+            <select id="quantity1">
+              <option value="0">Units</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+
+          <div class="line-total"><p id="total1">$0.00</p></div>
+        </div>
+
+        <div class="item" id="card2">
+          <div class="item-title">
+            <input type="checkbox" id="item2" />
+            <div>
+              Fresh Essence
+              <small>Mandarin • Jasmine • White Rose</small>
+            </div>
+          </div>
+
+          <div class="sizes">
+            <label><input type="radio" name="property2" value="10" /> 10ml — $10</label>
+            <label><input type="radio" name="property2" value="30" /> 50ml — $30</label>
+            <label><input type="radio" name="property2" value="60" /> 100ml — $60</label>
+          </div>
+
+          <div class="qty">
+            <select id="quantity2">
+              <option value="0">Units</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+
+          <div class="line-total"><p id="total2">$0.00</p></div>
+        </div>
+
+        <div class="item" id="card3">
+          <div class="item-title">
+            <input type="checkbox" id="item3" />
+            <div>
+              Classic Aroma
+              <small>Golden Amber • Musk • Vanilla</small>
+            </div>
+          </div>
+
+          <div class="sizes">
+            <label><input type="radio" name="property3" value="10" /> 10ml — $10</label>
+            <label><input type="radio" name="property3" value="35" /> 50ml — $35</label>
+            <label><input type="radio" name="property3" value="70" /> 100ml — $70</label>
+          </div>
+
+          <div class="qty">
+            <select id="quantity3">
+              <option value="0">Units</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+
+          <div class="line-total"><p id="total3">$0.00</p></div>
+        </div>
+      </div>
+
+      <aside class="panel summary" aria-label="Order Summary">
+        <h2>Order Summary</h2>
+        <p>
+          Taxes/discounts are handled by your current JavaScript:
+          <strong>+15% if total &lt; $200</strong>, and
+          <strong>-15% if total ≥ $200</strong>.
+        </p>
+
+        <div class="total" id="total">Total Cost (including taxes): ($0.00)</div>
+
+        <div class="actions">
+          <button type="button" onclick="myfunc()">CALCULATE</button>
+          <button class="secondary" type="button" onclick="location.href='../HTMLS/contactUs.html'">CHECKOUT</button>
+        </div>
+
+        <div class="note">
+          Tip: Choose a size and quantity after checking the item, then press <b>CALCULATE</b>.
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
