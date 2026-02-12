@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUXEON | Cart</title>
+  <link rel="icon" href="../photos/brand.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="../CSS/styleCartWishlist.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+  <script src="../JAVA SCRIPT/javascript_updated.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <p><span class="brand-name">LUXEON</span><br />
+      <span class="brand-slogan">Whispers Of Luxury</span></p>
+    </div>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="../HTMLS/index.html">About us</a></li>
+        <li><a href="../HTMLS/product.html">Products</a></li>
+        <li><a href="../HTMLS/shop.html">Shop Now</a></li>
+        <li><a href="../HTMLS/contactUs.html">Contact us</a></li>
+        <li><a class="active" href="../HTMLS/cart.html" aria-label="Cart"><i class="ri-shopping-cart-2-line"></i></a></li>
+        <li><a href="../HTMLS/wishlist.html" aria-label="Wishlist"><i class="ri-heart-line"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <h1>Your Cart</h1>
+      <p>This page shows what you selected on the Shop Now page.</p>
+    </section>
+
+    <section class="panel" id="cartPanel"></section>
+  </main>
+
+  <script>
+    function money(x){ return "$" + Number(x || 0).toFixed(2); }
+
+    function readCart(){
+      const raw = localStorage.getItem("luxeon_cart");
+      try { return raw ? JSON.parse(raw) : {items:[]}; } catch(e){ return {items:[]}; }
+    }
+    function writeCart(cart){
+      localStorage.setItem("luxeon_cart", JSON.stringify(cart));
+    }
+
+    function render(){
+      const panel = document.getElementById("cartPanel");
+      const cart = readCart();
+      const items = cart.items || [];
+
+      if (!items.length){
+        panel.innerHTML = `
+          <div class="empty">
+            Your cart is empty. Go to <b>Shop Now</b>, choose size + quantity, then press <b>CALCULATE</b>.
+          </div>
+          <div class="actions">
+            <button class="btn" onclick="location.href='../HTMLS/shop.html'">GO TO SHOP NOW</button>
+          </div>
+        `;
+        return;
+      }
+
+      panel.innerHTML = items.map((it, idx) => `
+        <div class="row">
+          <div>
+            <div class="name">${it.name}</div>
+            <div class="meta">${it.size || ""}</div>
+          </div>
+          <div class="price">${money(it.unitPrice)}</div>
+          <div class="qty">x ${it.quantity}</div>
+          <div class="total">${money(it.lineTotal)}</div>
+          <button class="remove" title="Remove" onclick="removeItem(${idx})">✕</button>
+        </div>
+      `).join("") + `
+        <div class="summary">
+          <div>
+            Subtotal: <strong>${money(cart.subtotal)}</strong>
+            <span style="opacity:.75">(${cart.rule || "none"})</span>
+          </div>
+          <div>
+            Final Total: <strong>${money(cart.finalTotal)}</strong>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn" onclick="location.href='../HTMLS/shop.html'">EDIT IN SHOP</button>
+          <button class="btn secondary" onclick="clearCart()">CLEAR CART</button>
+          <button class="btn" onclick="location.href='../HTMLS/contactUs.html'">CHECKOUT</button>
+        </div>
+      `;
+    }
+
+    function removeItem(i){
+      const cart = readCart();
+      cart.items.splice(i, 1);
+
+      const subtotal = cart.items.reduce((s,x)=>s + (x.lineTotal||0), 0);
+      cart.subtotal = subtotal;
+
+      let finalTotal = subtotal;
+      let rule = "none";
+      if (subtotal > 0 && subtotal < 200) { finalTotal = subtotal + subtotal*0.15; rule = "tax+15%"; }
+      else if (subtotal >= 200) { finalTotal = subtotal - subtotal*0.15; rule = "discount-15%"; }
+
+      cart.finalTotal = finalTotal;
+      cart.rule = rule;
+
+      writeCart(cart);
+      render();
+    }
+
+    function clearCart(){
+      localStorage.removeItem("luxeon_cart");
+      render();
+    }
+
+    render();
+  </script>
+</body>
+</html>
