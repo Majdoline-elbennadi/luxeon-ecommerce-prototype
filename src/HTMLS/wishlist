@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUXEON | Wishlist</title>
+  <link rel="icon" href="../photos/brand.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="../CSS/styleCartWishlist.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+  <script src="../JAVA SCRIPT/javascript_updated.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <p><span class="brand-name">LUXEON</span><br />
+      <span class="brand-slogan">Whispers Of Luxury</span></p>
+    </div>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="../HTMLS/index.html">About us</a></li>
+        <li><a href="../HTMLS/product.html">Products</a></li>
+        <li><a href="../HTMLS/shop.html">Shop Now</a></li>
+        <li><a href="../HTMLS/contactUs.html">Contact us</a></li>
+        <li><a href="../HTMLS/cart.html" aria-label="Cart"><i class="ri-shopping-cart-2-line"></i></a></li>
+        <li><a class="active" href="../HTMLS/wishlist.html" aria-label="Wishlist"><i class="ri-heart-line"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <h1>Your Wishlist</h1>
+      <p>Items you “hearted” will appear here.</p>
+    </section>
+
+    <section class="panel" id="wishPanel"></section>
+  </main>
+
+  <script>
+    function readWish(){
+      const raw = localStorage.getItem("luxeon_wishlist");
+      try { return raw ? JSON.parse(raw) : []; } catch(e){ return []; }
+    }
+    function writeWish(list){
+      localStorage.setItem("luxeon_wishlist", JSON.stringify(list));
+    }
+
+    function renderWish(){
+      const panel = document.getElementById("wishPanel");
+      const list = readWish();
+
+      if (!list.length){
+        panel.innerHTML = `
+          <div class="empty">
+            Your wishlist is empty. Add items by clicking a heart button on Products/Shop pages.
+          </div>
+          <div class="actions">
+            <button class="btn" onclick="location.href='../HTMLS/product.html'">GO TO PRODUCTS</button>
+          </div>
+        `;
+        return;
+      }
+
+      panel.innerHTML = `
+        <div class="wish-grid">
+          ${list.map((it, idx) => `
+            <div class="wish-card">
+              <h3>${it.name}</h3>
+              <p style="opacity:.7">ID: ${it.id}</p>
+              <div class="wish-actions">
+                <button class="small" onclick="location.href='../HTMLS/shop.html#${it.id}'">SHOP IT</button>
+                <button class="small secondary" onclick="removeWish(${idx})">REMOVE</button>
+              </div>
+            </div>
+          `).join("")}
+        </div>
+
+        <div class="actions">
+          <button class="btn secondary" onclick="clearWish()">CLEAR WISHLIST</button>
+        </div>
+      `;
+    }
+
+    function removeWish(i){
+      const list = readWish();
+      list.splice(i, 1);
+      writeWish(list);
+      renderWish();
+    }
+
+    function clearWish(){
+      localStorage.removeItem("luxeon_wishlist");
+      renderWish();
+    }
+
+    renderWish();
+  </script>
+</body>
+</html>
