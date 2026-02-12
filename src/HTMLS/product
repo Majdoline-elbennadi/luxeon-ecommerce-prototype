@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUXEON | Products</title>
+
+  <link rel="icon" href="../photos/brand.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="../CSS/styleProducts.css" />
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="logo">
+    <p>
+      <span class="brand-name">LUXEON</span><br>
+      <span class="brand-slogan">Whispers Of Luxury</span>
+    </p>
+  </div>
+
+  <nav>
+    <ul class="nav-list">
+      <li><a href="../HTMLS/index.html">About us</a></li>
+      <li><a class="active" href="../HTMLS/product.html">Products</a></li>
+      <li><a href="../HTMLS/shop.html">Shop Now</a></li>
+      <li><a href="../HTMLS/contactUs.html">Contact us</a></li>
+      <li><a href="../HTMLS/cart.html"><i class="ri-shopping-cart-2-line"></i></a></li>
+      <li><a href="../HTMLS/wishlist.html"><i class="ri-heart-line"></i></a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page">
+
+  <h1 class="page-title">Our Signature Collection</h1>
+
+  <section class="grid">
+
+    <article class="card">
+      <button class="heart-btn" data-wish="item1" data-name="Elegant Fragrance">
+        <i class="ri-heart-line"></i>
+      </button>
+
+      <img src="https://i.pinimg.com/736x/06/7e/1c/067e1ce027dd714430f1e8e9194293dd.jpg" alt="Elegant Fragrance">
+
+      <div class="card-body">
+        <h3>Elegant Fragrance</h3>
+        <p>Bergamot, white rose & rich woods.</p>
+
+        <div class="card-row">
+          <span class="price">$50</span>
+          <a href="../HTMLS/shop.html#item1" class="btn">SHOP NOW</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <button class="heart-btn" data-wish="item2" data-name="Fresh Essence">
+        <i class="ri-heart-line"></i>
+      </button>
+
+      <img src="https://i.pinimg.com/736x/dc/8c/89/dc8c89905240fc7de3d381332f734009.jpg" alt="Fresh Essence">
+
+      <div class="card-body">
+        <h3>Fresh Essence</h3>
+        <p>Mandarin, jasmine & white rose.</p>
+
+        <div class="card-row">
+          <span class="price">$60</span>
+          <a href="../HTMLS/shop.html#item2" class="btn">SHOP NOW</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <button class="heart-btn" data-wish="item3" data-name="Classic Aroma">
+        <i class="ri-heart-line"></i>
+      </button>
+
+      <img src="https://i.pinimg.com/736x/3c/35/23/3c3523ce1826424db37b53941c8d1260.jpg" alt="Classic Aroma">
+
+      <div class="card-body">
+        <h3>Classic Aroma</h3>
+        <p>Amber, musk & warm vanilla.</p>
+
+        <div class="card-row">
+          <span class="price">$70</span>
+          <a href="../HTMLS/shop.html#item3" class="btn">SHOP NOW</a>
+        </div>
+      </div>
+    </article>
+
+  </section>
+</main>
+
+<script src="../JAVA SCRIPT/javascript.js" defer></script>
+
+</body>
+</html>
