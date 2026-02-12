@@ -40,14 +40,23 @@ The main goals of this prototype are:
 
 ## 🧩 System Design & Project Structure
 luxeon-ecommerce-prototype/
+
 │
+
 ├── src/ → source code (frontend & backend)
+
 │ ├── components/ → UI components
+
 │ ├── pages/ → pages like Home, Product, Cart
+
 │ └── scripts/ → JS files for session/cart logic
+
 │
+
 ├── data/ → mock database or JSON product data
+
 ├── images/ → product images and screenshots
+
 └── README.md
 
 - **components/** → reusable UI elements (buttons, cards, headers)  
